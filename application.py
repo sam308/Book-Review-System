@@ -6,10 +6,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from models import *
 
-#app = Flask(__name__)
-
-#engine = create_engine("postgres://tpopdzhrzugoid:22b262b28548fd03634e331c3772909d0724f951f6c263447a8a6f1188ebc671@ec2-3-211-48-92.compute-1.amazonaws.com:5432/dfdvqphj2hds5t")
-#db = scoped_session(sessionmaker(bind=engine))
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://tpopdzhrzugoid:22b262b28548fd03634e331c3772909d0724f951f6c263447a8a6f1188ebc671@ec2-3-211-48-92.compute-1.amazonaws.com:5432/dfdvqphj2hds5t"
@@ -38,7 +34,6 @@ def trylogin():
 
     us = User.query.filter_by(username=username).first()
 
-    #user = db.execute("SELECT * FROM users WHERE username = :username", {"username": username}).fetchone()
     if us is None:
         return render_template("login_error.html", message="No such user is present.")
 
@@ -60,10 +55,6 @@ def registration():
     username=request.form.get("user10")
     password=request.form.get("pass10")
 
-    #db.execute("INSERT INTO users ( name, email, username, password) VALUES (:name, :email, :username, :password)",
-                    #{"name": name, "email": email ,"username": username,"password": password})
-            
-    #db.commit()
 
     newUser = User(name=name, email=email, username=username, password=password)
     db.session.add(newUser)
@@ -73,7 +64,6 @@ def registration():
 @app.route("/searchIsbn", methods=["POST"])
 def searchIsbn():
 
-    # Query for currency exchange 
    
     isbn = request.form.get("isbn10")
     bb = Book.query.filter_by(isbn=isbn).first()
