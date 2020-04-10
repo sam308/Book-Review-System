@@ -1,0 +1,1 @@
+A Web Application built in Flask and which uses PostGreSQL, wherein you can register and login to search for the review statistics of a book by its ISBN. Thanks to Goodreads API for making the statistics available.

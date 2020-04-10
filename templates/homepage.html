@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel = "icon" href =  "https://www.pngkit.com/png/detail/61-612409_royalty-free-clip-art-silueta-de-libro-abierto.png" type = "image/x-icon"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style>
+            h1 {
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                color:darkred;
+                text-align: center;
+                font-size: 100px;
+            }
+
+            body {
+                background-image: linear-gradient(to right, rgba(224, 192, 8, 0.938), rgb(235, 86, 28));
+            }
+
+            a {
+                font-size: 25px;
+                color:darkgreen;
+            } 
+
+            #getIsbn {
+                text-align: center;
+                margin:10px;
+                margin-top:150px;
+                color: darkmagenta;
+            }     
+
+        </style>
+
+    </head>
+    <body>
+        <a href="{{ url_for('index') }}">Logout</a>
+        <br>
+        <br>
+        <br>
+
+        <div id="getIsbn">
+            <form action="{{ url_for('searchIsbn') }}" method="post">
+                <input size="50" type="name"  name="isbn10" id="isbn10" placeholder="ISBN">
+                <br>
+                <br>
+                <button id="submitisbn10" type="submit" class="btn btn-primary">Search...</button>
+            </form>
+        </div>
+    </body>
+</html>

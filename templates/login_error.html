@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Error
+{% endblock %}
+
+{% block body %}
+    <h1>Error</h1>
+    <br>
+    <br>
+    <div id="error_message">{{ message }}</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>    
+
+    <h2 align="center"><a href="{{ url_for('login') }}">Try Again.</a></h2>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2 align="center"><a href="{{ url_for('register') }}">Sign Up Instead?</a></h2>
+{% endblock %}

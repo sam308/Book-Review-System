@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Page</title>
+        <link rel = "icon" href =  "https://www.pngkit.com/png/detail/61-612409_royalty-free-clip-art-silueta-de-libro-abierto.png" type = "image/x-icon"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <style>
+            h1 {
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                color: crimson;
+                text-align: center;
+                font-size: 100px;
+            }
+
+            h3 {
+                color: darkred;
+                font-size: 40px;
+                font-style: oblique;
+                text-align: center;
+            }
+            
+            body {
+                background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+            }      
+        </style>
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+
+                // By default, submit button is disabled
+                document.querySelector('#submit10').disabled = true;
+
+                // Enable button only if there is text in the input field
+                document.querySelector('#Pass10').onkeyup = () => {
+                    if (document.querySelector('#Name10').value.length > 0 && document.querySelector('#Email10').value.length > 0 && document.querySelector('#User10').value.length > 0 && document.querySelector('#Pass10').value.length > 7)
+                        document.querySelector('#submit10').disabled = false;
+                    else
+                        document.querySelector('#submit10').disabled = true;
+                };
+
+                
+
+            });
+        </script>
+
+    </head>
+    <body>
+        <div class="container">
+            <h3>Get yourself registered to our site: </h3>
+
+            <br>
+
+            <form action="{{ url_for('registration') }}" method="post">
+                <div class="form-group">
+                <label for="inputEmail">Name:</label>
+                <br>
+                <input type="name" class="form-control" name="name10" id="Name10" placeholder="Name">
+                </div>
+                <br><br>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address:</label>
+                    <br>
+                    <input type="email" class="form-control" name="email10" id="Email10" placeholder="Email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <br><br>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Username:</label>
+                    <br>
+                    <input type="name" class="form-control" name="user10" id="User10" placeholder="Username">
+                    <small id="emailHelp" class="form-text text-muted">Whatever you want to be displayed as your username</small>
+                </div>
+                <br><br>
+                <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <br>
+                <input type="password" class="form-control" name="pass10" id="Pass10" placeholder="Password">
+                <small id="emailHelp" class="form-text text-muted">Make sure password is atleast 8 characters long</small>
+                </div>  
+                <br><br>
+
+                <button id="submit10" type="submit" class="btn btn-primary">Submit</button>
+            </form>
+    
+        </div>
+    </body>
+</html>
+
+
+
+
+
+   

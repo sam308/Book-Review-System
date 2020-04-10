@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome Page
+{% endblock %}
+
+{% block body %}
+    <h1>The Book Review System</h1>
+
+    <br>
+
+    <div id="login_">Already a user? <a href="{{ url_for('login') }}">Click here to log in</a></div>
+
+    <br>
+
+    <div id="register_">Not yet registered? <a href="{{ url_for('register') }}">Click here to register</a></div>
+
+    
+{% endblock %}

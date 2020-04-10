@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Page</title>
+        <link rel = "icon" href =  "https://www.pngkit.com/png/detail/61-612409_royalty-free-clip-art-silueta-de-libro-abierto.png" type = "image/x-icon"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <style>
+            
+            h3 {
+                color: darkmagenta;
+                font-size: 40px;
+                font-style: oblique;
+                text-align: center;
+            }
+            
+            body {
+                background-image: radial-gradient(cyan, lightyellow);
+            }      
+        </style>
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+
+                // By default, submit button is disabled
+                document.querySelector('#Lsubmit10').disabled = true;
+
+                // Enable button only if there is text in the input field
+                document.querySelector('#LPass10').onkeyup = () => {
+                    if (document.querySelector('#LUser10').value.length > 0 && document.querySelector('#LPass10').value.length > 0)
+                        document.querySelector('#Lsubmit10').disabled = false;
+                    else
+                        document.querySelector('#Lsubmit10').disabled = true;
+                };
+            });
+        </script>
+
+    </head>
+    <body>
+        <div class="container">
+            <h3>Log-In with your credentials: </h3>
+
+            <br>
+
+            <form action="{{ url_for('trylogin') }}" method="post">
+                <div class="form-group">
+                <label for="exampleInputEmail1">Username:</label>
+                <br>
+                <input type="name" class="form-control" name="luser10" id="LUser10" placeholder="Username">
+                <small id="emailHelp" class="form-text text-muted">Remember: Username is case sensitive.</small>
+                </div>
+                <br><br>
+                <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <br>
+                <input type="password" class="form-control" name="lpass10" id="LPass10" placeholder="Password">
+                </div>  
+                <br><br>
+
+                <button id="Lsubmit10" type="submit" class="btn btn-primary">Submit</button>
+            </form>
+    
+        </div>
+    </body>
+</html>
+
+
+
+
+
+   

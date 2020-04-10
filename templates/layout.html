@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel = "icon" href =  "https://www.pngkit.com/png/detail/61-612409_royalty-free-clip-art-silueta-de-libro-abierto.png" type = "image/x-icon"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style>
+            h1 {
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                color:darkred;
+                text-align: center;
+                font-size: 100px;
+            }
+
+            
+            #login_ , #register_{
+                color: darkslateblue;
+                padding:2cm;
+                text-align: center;
+                font-size: 25px;
+            }    
+            body {
+                background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,100,126,1));
+            }      
+            #registersucess_{
+                color: darkgreen;
+                text-align: center;
+                font-size: 30px;
+            }
+
+            #error_message {
+                color:midnightblue;
+                text-align: center;
+                font-size: 50px;
+            }
+
+            #apisucess_ {
+                color: darkred;
+                font-weight: bold;
+                font-size: 50px;
+                margin-left: 50px;
+            }
+
+            #valueapi_ {
+                color:darkblue;
+                font-size: 30px;
+                margin-left: 50px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="container">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
+

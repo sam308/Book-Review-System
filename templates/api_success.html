@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search Successful
+{% endblock %}
+
+{% block body %}
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div margin="20px" id="apisucess_">The details fetched:
+    <br>
+    <br>
+    <div margin="20px" id="valueapi_">The Title of the book is: {{title}} </div>
+    <div margin="20px" id="valueapi_">The Author of the book is: {{author}} </div>
+    <div margin="20px" id="valueapi_">The Year of publication of the book is: {{year}} </div>
+    <div margin="20px" id="valueapi_">The Review Count of the book is: {{rcount}} </div>
+    <div margin="20px" id="valueapi_">The Average Rating is: {{arating}} </div>
+    <br>
+    <br>
+    <br>
+    
+{% endblock %}
